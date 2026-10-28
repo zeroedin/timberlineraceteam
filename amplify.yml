@@ -1,0 +1,17 @@
+# AWS Amplify Hosting build spec
+# Builds the site with a pinned, checksum-verified Alloy release and publishes _site/.
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - curl -sSL -o alloy.tar.gz https://github.com/zeroedin/alloy/releases/download/v0.7.0/alloy-linux-amd64.tar.gz
+        - echo "51b5ecfb3a51cf3f0790e09af9b33bb6ee9705ca34021397eab5576aeed99999  alloy.tar.gz" | sha256sum -c -
+        - tar -xzf alloy.tar.gz alloy-linux-amd64 && install -m 755 alloy-linux-amd64 ./alloy
+    build:
+      commands:
+        - ./alloy build
+  artifacts:
+    baseDirectory: _site
+    files:
+      - '**/*'
