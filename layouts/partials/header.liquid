@@ -1,0 +1,27 @@
+<div class="utility">
+  <div class="wrap">
+    <a href="mailto:{{ site.data.team.email }}">{{ site.data.team.email }}</a>
+    <span class="utility-links">
+      <a href="{{ site.data.team.teamsnap_signin }}">TeamSnap</a>
+      <a href="{{ site.data.team.facebook }}">Facebook</a>
+    </span>
+  </div>
+</div>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <img class="brand-logo" src="/trt-logo-horizontal-reversed.svg" alt="{{ site.data.team.name }} home" width="399" height="112">
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="sr-only">Menu</span><span class="bars" aria-hidden="true"></span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+        {% for item in site.data.navigation.main %}
+        <li><a href="{{ item.url }}"{% if item.url == page.permalink %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+      <a class="button button-small" href="/sponsors/">Donate</a>
+    </nav>
+  </div>
+</header>

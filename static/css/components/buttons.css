@@ -1,0 +1,41 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.6rem;
+  font: 700 1.05rem/1 var(--display);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--navy);
+  background: var(--orange);
+  border: 2px solid var(--orange);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.15s;
+
+  &:hover {
+    color: var(--navy);
+    background: var(--orange-soft);
+    border-color: var(--orange-soft);
+    transform: translateY(-1px);
+  }
+}
+
+/* outlined, for navy backgrounds */
+.button-ghost {
+  color: var(--snow);
+  background: transparent;
+  border-color: rgb(255 255 255 / 0.55);
+
+  &:hover {
+    color: var(--navy);
+    background: var(--snow);
+    border-color: var(--snow);
+  }
+}
+
+.button-small {
+  padding: 0.6rem 1.15rem;
+  font-size: 0.95rem;
+}

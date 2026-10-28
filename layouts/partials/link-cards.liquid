@@ -1,0 +1,10 @@
+<ul class="cards">
+  {% for card in site.data.quick_links %}
+  <li class="card">
+    <span class="kicker">{{ card.kicker }}</span>
+    <h3>{{ card.title }}</h3>
+    <p>{{ card.text }}</p>
+    <a class="card-link" href="{{ card.url }}">{{ card.cta }}<span class="sr-only">: {{ card.title }}</span> →</a>
+  </li>
+  {% endfor %}
+</ul>

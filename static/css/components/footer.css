@@ -1,0 +1,95 @@
+.site-footer {
+  position: relative;
+  margin-top: clamp(3rem, 8vw, 6rem);
+  padding-top: 3.5rem;
+  background: var(--navy-deep);
+  color: var(--on-dark-muted);
+  font-size: 0.95rem;
+
+  /* mountains rise out of the top of the footer */
+  & .ridge {
+    bottom: calc(100% - 1px);
+  }
+
+  & .ridge-back {
+    fill: var(--navy-soft);
+  }
+
+  & .ridge-front {
+    fill: var(--navy-deep);
+  }
+
+  & h2 {
+    margin: 0 0 0.9rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+    color: var(--snow);
+
+    &::before {
+      display: none;
+    }
+  }
+
+  & ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  & li {
+    margin-bottom: 0.4rem;
+  }
+
+  & a {
+    color: var(--ice);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--orange);
+    }
+  }
+
+  & address {
+    font-style: normal;
+    margin-bottom: 0.75rem;
+  }
+
+  & .small {
+    font-size: 0.85rem;
+    color: var(--on-dark-faint);
+  }
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 2rem;
+  padding-bottom: 2.5rem;
+
+  @media (max-width: 52rem) {
+    grid-template-columns: 1fr 1fr;
+
+    & > :first-child {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 30rem) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer-logo {
+  display: block;
+  width: 9.5rem;
+  height: auto;
+  margin-bottom: 1.25rem;
+}
+
+.legal {
+  margin: 0;
+  padding-block: 1.25rem 1.75rem;
+  border-top: 1px solid var(--rule-on-dark);
+  font-size: 0.85rem;
+  color: var(--on-dark-faint);
+}

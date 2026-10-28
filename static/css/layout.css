@@ -1,0 +1,32 @@
+/* Containers and section grids only. Tweaks to what sits inside a grid belong in
+   that component's file: the components layer outranks this one. */
+
+.wrap {
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* home: registration panel beside the explore tiles */
+.home-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1.5rem;
+  padding-block: 3.5rem 4rem;
+
+  @media (max-width: 62rem) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* quick links: contact details beside the inquiry form */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 2rem;
+  align-items: start;
+
+  @media (max-width: 48rem) {
+    grid-template-columns: 1fr;
+  }
+}

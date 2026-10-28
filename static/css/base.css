@@ -1,0 +1,59 @@
+body {
+  font: 400 1.0625rem/1.7 var(--text);
+  color: var(--ink);
+  background: var(--frost);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* clear the sticky header on #anchor jumps */
+[id] {
+  scroll-margin-top: var(--header-offset);
+}
+
+a {
+  color: var(--blue);
+  text-underline-offset: 0.18em;
+
+  &:hover {
+    color: var(--navy);
+  }
+}
+
+:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--navy);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.75rem, 7vw, 4.75rem);
+  margin: 0;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3.6vw, 2.4rem);
+  margin: 3rem 0 1rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 2rem 0 0.5rem;
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 1.1rem;
+}

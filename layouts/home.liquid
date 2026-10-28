@@ -1,0 +1,40 @@
+---
+layout: "base"
+---
+<section class="hero">
+  <div class="wrap hero-inner">
+    <p class="kicker">{{ site.data.team.tagline }}</p>
+    <h1>Welcome to <span>Timberline Race Team</span></h1>
+    <p class="lede">{{ page.lede }}</p>
+    <div class="actions">
+      <a class="button" href="/general-information/#registration">Join the Team</a>
+      <a class="button button-ghost" href="{{ site.data.team.teamsnap_signin }}">TeamSnap Sign In</a>
+      <a class="button button-ghost" href="/sponsors/">Donate</a>
+    </div>
+  </div>
+  {% include "partials/ridge" %}
+</section>
+
+<section class="facts" aria-label="Team at a glance">
+  <div class="wrap">
+    <ul>
+      {% for fact in site.data.team.facts %}
+      <li><strong>{{ fact.value }}</strong><span>{{ fact.label }}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="wrap home-grid">
+  <div class="panel prose">
+    {{ content }}
+  </div>
+  <nav class="tiles" aria-label="Explore">
+    <a class="tile" href="/about/"><span class="kicker">Since 1980</span><strong>About the team</strong><span>History, coaches and the board of directors.</span></a>
+    <a class="tile" href="/general-information/"><span class="kicker">Season</span><strong>General information</strong><span>Fees, registration, practices and race schedule.</span></a>
+    <a class="tile" href="/faqs/"><span class="kicker">New families</span><strong>FAQs</strong><span>The Hut, equipment, jackets and what to expect.</span></a>
+    <a class="tile" href="/sponsors/"><span class="kicker">Support</span><strong>Sponsor &amp; donate</strong><span>Raffle and auction donations help fund race safety gear.</span></a>
+  </nav>
+</section>
+
+{% if page.footer_cta %}{% include "partials/teamsnap-cta" %}{% endif %}

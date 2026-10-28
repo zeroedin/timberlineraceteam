@@ -1,0 +1,64 @@
+/* rendered Markdown on article pages */
+.prose {
+  max-width: var(--measure);
+  padding-block: 3rem 4.5rem;
+
+  /* article.prose, not the .prose panel on the home page */
+  article& > :first-child {
+    margin-top: 0;
+  }
+
+  /* section headings get a short orange rule above them */
+  & h2 {
+    position: relative;
+    padding-top: 1.25rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3rem;
+      height: 4px;
+      background: var(--orange);
+    }
+  }
+
+  & ul {
+    padding-left: 1.2rem;
+  }
+
+  & li {
+    margin-bottom: 0.45rem;
+
+    &::marker {
+      color: var(--orange);
+    }
+  }
+
+  & strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+}
+
+.prose-wide {
+  max-width: var(--wrap);
+}
+
+/* highlighted box, e.g. the sponsor contact block */
+.callout {
+  margin: 2.5rem 0 0;
+  padding: 1.75rem 2rem;
+  background: var(--snow);
+  border-left: 5px solid var(--orange);
+  border-radius: 0 var(--radius) var(--radius) 0;
+
+  & h3 {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,15 @@
+---
+layout: "base"
+---
+<section class="page-hero">
+  <div class="wrap">
+    <p class="kicker">{{ site.data.team.name }}</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
+  </div>
+  {% include "partials/ridge" %}
+</section>
+<article class="wrap prose">
+  {{ content }}
+</article>
+{% if page.footer_cta %}{% include "partials/teamsnap-cta" %}{% endif %}

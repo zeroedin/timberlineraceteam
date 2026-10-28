@@ -1,0 +1,62 @@
+/* FAQ accordion built from <details>/<summary> in content/faqs.md */
+
+.faq-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.faq {
+  background: var(--snow);
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: border-color 0.15s;
+
+  &[open] {
+    border-color: var(--ice);
+  }
+
+  & summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.15rem 1.4rem;
+    cursor: pointer;
+    list-style: none;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.4;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    /* chevron drawn from two borders; flips when open */
+    &::after {
+      content: "";
+      flex: none;
+      width: 0.7rem;
+      height: 0.7rem;
+      border-right: 2.5px solid var(--orange);
+      border-bottom: 2.5px solid var(--orange);
+      transform: rotate(45deg) translate(-2px, -2px);
+      transition: transform 0.2s;
+    }
+
+    &:hover {
+      color: var(--blue);
+    }
+  }
+
+  &[open] summary::after {
+    transform: rotate(-135deg) translate(-2px, -2px);
+  }
+
+  & > :not(summary) {
+    margin-inline: 1.4rem;
+  }
+
+  & > :last-child {
+    margin-bottom: 1.3rem;
+  }
+}

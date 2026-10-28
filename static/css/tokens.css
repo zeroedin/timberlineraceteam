@@ -1,0 +1,39 @@
+/* Palette comes from the team emblem (static/trt-logo.svg):
+   navy #18283f, sky #54a5e0, orange #f68612. */
+
+:root {
+  /* brand */
+  --navy: #18283f;
+  --navy-deep: #101c2e;
+  --navy-soft: #24395a;
+  --sky: #54a5e0;
+  --blue: #1f5f9e; /* sky darkened for text links (AA on white) */
+  --orange: #f68612;
+  --orange-soft: #f89a3a;
+
+  /* light surfaces */
+  --snow: #ffffff;
+  --frost: #f2f5f9;
+  --ice: #dfe7f0;
+  --ink: #16212e;
+  --muted: #4f5d6d;
+  --line: #d6dee8;
+
+  /* text and rules on navy surfaces */
+  --on-dark: #d7e2ee;
+  --on-dark-soft: #c9d6e4;
+  --on-dark-muted: #b8c6d6;
+  --on-dark-faint: #8ea1b6;
+  --rule-on-dark: rgb(255 255 255 / 0.08);
+
+  /* type */
+  --display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --text: "Jost", system-ui, sans-serif;
+
+  /* shape and spacing */
+  --radius: 14px;
+  --wrap: 72rem;
+  --measure: calc(52rem + 2 * var(--gutter)); /* reading column incl. gutters */
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --header-offset: 6.5rem; /* sticky header height + breathing room */
+}

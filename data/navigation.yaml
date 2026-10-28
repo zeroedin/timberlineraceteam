@@ -1,0 +1,14 @@
+# Main menu, in the order of the original WordPress header
+main:
+  - label: "Home"
+    url: "/"
+  - label: "About"
+    url: "/about/"
+  - label: "FAQs"
+    url: "/faqs/"
+  - label: "General Information"
+    url: "/general-information/"
+  - label: "Quick Links"
+    url: "/quick-links/"
+  - label: "Sponsors"
+    url: "/sponsors/"

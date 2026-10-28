@@ -1,0 +1,75 @@
+/* Quick Links: contact details column, the inquiry form card, and the form itself */
+
+.contact-grid {
+  & h3:first-child {
+    margin-top: 0;
+  }
+
+  /* the form column is a white card */
+  & > div:last-child {
+    padding: clamp(1.25rem, 3vw, 2rem);
+    background: var(--snow);
+    border-radius: var(--radius);
+
+    & h2 {
+      margin-top: 0;
+      padding-top: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+.contact-form {
+  display: grid;
+  gap: 0.35rem;
+
+  & label {
+    margin-top: 0.75rem;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  & .form-help {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  & :is(input, textarea) {
+    width: 100%;
+    padding: 0.75rem 0.9rem;
+    font: inherit;
+    color: var(--ink);
+    background: var(--frost);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+
+    &:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgb(84 165 224 / 0.3);
+      background: var(--snow);
+    }
+  }
+
+  & button {
+    justify-self: start;
+    margin-top: 1rem;
+    padding: 0.85rem 1.8rem;
+    font: 700 1.05rem/1 var(--display);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--orange);
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--orange-soft);
+    }
+  }
+}

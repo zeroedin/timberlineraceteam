@@ -1,0 +1,36 @@
+/* Timberline Race Team — stylesheet entry point.
+
+   Layers are listed lowest to highest precedence: a rule in a later layer wins over
+   an earlier layer regardless of selector specificity. Every file below lands in
+   exactly one layer, so where a rule lives decides what it can override.
+
+   reset       browser normalisation
+   tokens      custom properties (colour, type, spacing)
+   base        element defaults: body, links, headings, text
+   layout      page containers and section grids
+   components  one file per UI block, named after its root class
+   utilities   single-purpose helpers that must win */
+
+@layer reset, tokens, base, layout, components, utilities;
+
+@import url("reset.css") layer(reset);
+@import url("tokens.css") layer(tokens);
+@import url("base.css") layer(base);
+@import url("layout.css") layer(layout);
+
+@import url("components/buttons.css") layer(components);
+@import url("components/kicker.css") layer(components);
+@import url("components/header.css") layer(components);
+@import url("components/ridge.css") layer(components);
+@import url("components/hero.css") layer(components);
+@import url("components/facts.css") layer(components);
+@import url("components/tiles.css") layer(components);
+@import url("components/prose.css") layer(components);
+@import url("components/board.css") layer(components);
+@import url("components/faq.css") layer(components);
+@import url("components/cards.css") layer(components);
+@import url("components/contact.css") layer(components);
+@import url("components/cta.css") layer(components);
+@import url("components/footer.css") layer(components);
+
+@import url("utilities.css") layer(utilities);

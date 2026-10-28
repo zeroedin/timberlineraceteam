@@ -1,0 +1,36 @@
+# Team details shared by the layouts and partials
+name: "Timberline Race Team"
+short_name: "TRT"
+tagline: "Junior alpine racing at Timberline Mountain, West Virginia"
+email: "TimberlineRacers@gmail.com"
+mailing_address:
+  - "Timberline Race Team"
+  - "P.O. Box 327"
+  - "Davis, WV 26260"
+map_url: "https://www.google.com/maps?q=39%C2%B002%2730.6%22N%2079%C2%B024%2708.8%22W"
+facebook: "https://www.facebook.com/groups/459414808394609/about"
+teamsnap_signin: "https://go.teamsnap.com/login/signin"
+tax_id: "55-064-8568"
+copyright: "© 2025-2026 Timberline Race Team. All Rights Reserved"
+
+# Facts pulled from the recovered About / General Information pages
+facts:
+  - value: "1980"
+    label: "Racing at Timberline since"
+  - value: "6–18"
+    label: "Athlete ages"
+  - value: "GS & SL"
+    label: "Giant slalom and slalom"
+  - value: "501(c)(3)"
+    label: "Parent-run nonprofit"
+
+# Elsewhere on the web
+partners:
+  - label: "SARA"
+    url: "https://saraski.org/"
+  - label: "US Ski & Snowboard"
+    url: "https://usskiandsnowboard.org/membership"
+  - label: "AdminSkiRacing"
+    url: "https://adminskiracing.com/node/184765"
+  - label: "Timberline Mountain"
+    url: "https://www.timberlinemountain.com/"

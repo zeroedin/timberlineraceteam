@@ -1,0 +1,8 @@
+title: "Timberline Race Team"
+baseURL: "https://timberlineraceteam.org"
+language: "en"
+
+content:
+  markdown:
+    goldmark:
+      unsafe: true  # the contact form on Quick Links is raw HTML

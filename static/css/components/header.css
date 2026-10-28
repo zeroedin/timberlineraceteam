@@ -1,0 +1,205 @@
+/* utility bar, sticky site header, logo, main nav and the mobile menu toggle */
+
+.utility {
+  background: var(--navy-deep);
+  color: var(--on-dark-soft);
+  font-size: 0.85rem;
+
+  & .wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 0.45rem;
+  }
+
+  & a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--orange);
+    }
+  }
+}
+
+.utility-links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--navy);
+  color: var(--snow);
+  box-shadow: 0 1px 0 var(--rule-on-dark);
+
+  & .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    min-height: 4.75rem;
+  }
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--snow);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--snow);
+  }
+}
+
+.brand-logo {
+  display: block;
+  width: auto;
+  height: 3.75rem;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+
+  & ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  & ul a {
+    position: relative;
+    padding-block: 0.4rem;
+    font: 700 1.05rem/1 var(--display);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--snow);
+    text-decoration: none;
+
+    /* orange underline that grows in on hover and marks the current page */
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -0.15rem;
+      height: 3px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s;
+    }
+
+    &:is(:hover, [aria-current="page"])::after {
+      transform: scaleX(1);
+    }
+
+    &[aria-current="page"] {
+      color: var(--orange);
+    }
+  }
+
+  /* collapsed into a drop-down panel below the header */
+  @media (max-width: 62rem) {
+    position: absolute;
+    inset: 100% 0 auto;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 1rem var(--gutter) 1.5rem;
+    background: var(--navy);
+    border-top: 1px solid rgb(255 255 255 / 0.1);
+
+    .menu-open & {
+      display: flex;
+    }
+
+    & ul {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    & ul a {
+      display: block;
+      padding-block: 0.85rem;
+      border-bottom: 1px solid var(--rule-on-dark);
+      font-size: 1.2rem;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    & .button {
+      align-self: flex-start;
+    }
+  }
+}
+
+.menu-toggle {
+  display: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--snow);
+  cursor: pointer;
+
+  @media (max-width: 62rem) {
+    display: block;
+  }
+}
+
+/* hamburger that turns into an X while the menu is open */
+.bars,
+.bars::before,
+.bars::after {
+  display: block;
+  width: 1.6rem;
+  height: 2px;
+  margin-inline: auto;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.bars {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+
+  &::before {
+    top: -0.5rem;
+  }
+
+  &::after {
+    top: 0.5rem;
+  }
+
+  .menu-open & {
+    background: transparent;
+
+    &::before {
+      transform: translateY(0.5rem) rotate(45deg);
+    }
+
+    &::after {
+      transform: translateY(-0.5rem) rotate(-45deg);
+    }
+  }
+}

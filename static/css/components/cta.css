@@ -1,0 +1,26 @@
+/* "Connect with your team on TeamSnap" band (layouts/partials/teamsnap-cta.liquid) */
+.cta {
+  padding-block: 0 4rem;
+
+  & h2 {
+    margin: 0 0 0.35rem;
+    color: var(--snow);
+    font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+  }
+
+  & p:last-child {
+    margin: 0;
+  }
+}
+
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem 2rem;
+  flex-wrap: wrap;
+  padding: 2.25rem clamp(1.5rem, 4vw, 3rem);
+  background: linear-gradient(120deg, var(--navy) 0%, var(--navy-soft) 100%);
+  border-radius: var(--radius);
+  color: var(--on-dark);
+}

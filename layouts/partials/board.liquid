@@ -1,0 +1,14 @@
+<div class="board">
+  <div>
+    <h3>Officers</h3>
+    <ul>
+      {% for m in site.data.board.officers %}<li><strong>{{ m.name }}</strong><span>{{ m.role }}</span></li>{% endfor %}
+    </ul>
+  </div>
+  <div>
+    <h3>Directors</h3>
+    <ul>
+      {% for m in site.data.board.directors %}<li><strong>{{ m.name }}</strong><span>{{ m.role }}</span></li>{% endfor %}
+    </ul>
+  </div>
+</div>

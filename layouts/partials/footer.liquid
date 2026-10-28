@@ -1,0 +1,31 @@
+<footer class="site-footer">
+  {% include "partials/ridge" %}
+  <div class="wrap footer-grid">
+    <div>
+      <a href="/"><img class="footer-logo" src="/trt-logo-reversed.svg" alt="{{ site.data.team.name }}" width="239" height="208"></a>
+      <p>A parent-volunteer-run, not-for-profit 501(c)(3) organization developing young alpine racers at Timberline Mountain in Canaan Valley, West Virginia.</p>
+      <p class="small">Tax ID {{ site.data.team.tax_id }}</p>
+    </div>
+    <div>
+      <h2>Contact</h2>
+      <p><a href="mailto:{{ site.data.team.email }}">Email Us</a></p>
+      <address>{% for line in site.data.team.mailing_address %}{{ line }}<br>{% endfor %}</address>
+      <p><a href="{{ site.data.team.map_url }}">Map</a></p>
+    </div>
+    <div>
+      <h2>Team</h2>
+      <ul>
+        {% for item in site.data.navigation.main %}<li><a href="{{ item.url }}">{{ item.label }}</a></li>{% endfor %}
+      </ul>
+    </div>
+    <div>
+      <h2>Connect</h2>
+      <ul>
+        <li><a href="{{ site.data.team.teamsnap_signin }}">TeamSnap</a></li>
+        <li><a href="{{ site.data.team.facebook }}">Facebook</a></li>
+        {% for p in site.data.team.partners %}<li><a href="{{ p.url }}">{{ p.label }}</a></li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="wrap"><p class="legal">{{ site.data.team.copyright }}</p></div>
+</footer>

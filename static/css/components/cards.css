@@ -1,0 +1,55 @@
+/* quick-link cards (layouts/partials/link-cards.liquid) */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1rem;
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+
+  .prose & li {
+    margin: 0;
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: var(--snow);
+  border-radius: var(--radius);
+  border-top: 4px solid var(--navy);
+  transition: border-color 0.15s, transform 0.15s;
+
+  &:hover {
+    border-top-color: var(--orange);
+    transform: translateY(-2px);
+  }
+
+  & h3 {
+    margin: 0 0 0.5rem;
+  }
+
+  & p {
+    flex: 1;
+    font-size: 0.97rem;
+    color: var(--muted);
+  }
+}
+
+.card-link {
+  align-self: flex-start;
+  font: 700 1rem/1 var(--display);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  /* stretch the link over the whole card */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+}

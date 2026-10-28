@@ -1,0 +1,18 @@
+/* mountain silhouette along the bottom edge of navy bands (USSS-style);
+   the footer flips its colours in footer.css */
+.ridge {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: clamp(40px, 7vw, 110px);
+  pointer-events: none;
+}
+
+.ridge-back {
+  fill: var(--navy-soft);
+}
+
+.ridge-front {
+  fill: var(--frost);
+}
